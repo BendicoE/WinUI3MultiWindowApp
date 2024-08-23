@@ -1,9 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinUI3MultiWindowApp
 {
@@ -14,6 +9,25 @@ namespace WinUI3MultiWindowApp
         { 
             get => _no;
             set => SetProperty(ref _no, value);
+        }
+
+        private int[] _bigArray = null;
+        public int[] BigArray
+        {
+            get => _bigArray;
+            set => SetProperty(ref _bigArray, value);
+        }
+
+        public int ArraySize
+        {
+            get => BigArray.Length;
+        }
+
+        public SubViewModel()
+        {
+            _bigArray = new int[10000000];
+            for (int i = 0; i < _bigArray.Length; i++)
+                _bigArray[i] = i;
         }
     }
 }

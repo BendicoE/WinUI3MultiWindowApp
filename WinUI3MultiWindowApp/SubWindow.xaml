@@ -16,7 +16,8 @@
                 <TextBlock Text="{x:Bind Model.No}" FontSize="50" Margin="8"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Button x:Name="GetArraySizeButton" Content="Get Array Size" Tapped="GetArraySizeButton_Tapped" />
+                <TextBlock Text="Array size: " FontSize="20" Margin="12" />
+                <TextBlock Text="{x:Bind Model.ArraySize}" FontSize="20" Margin="12"/>
             </StackPanel>
         </StackPanel>
     </Grid>
