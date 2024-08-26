@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Window
-    x:Class="WinUI3MultiWindowApp.SubWindow"
+<Page
+    x:Class="WinUI3MultiWindowApp.SubWindowTwoPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WinUI3MultiWindowApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Closed="Window_Closed">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid x:Name="Container">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock Text="SubWindow No" FontSize="50" Margin="8" />
-                <TextBlock Text="{x:Bind Model.No}" FontSize="50" Margin="8"/>
+                <TextBlock Text="SubWindowTwo No" FontSize="50" Margin="8" />
+                <TextBlock Text="{x:Bind Model.No, Mode=OneWay}" FontSize="50" Margin="8"/>
                 <!--<TextBlock Text="{Binding Model.No}" FontSize="50" Margin="8"/>-->
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -26,4 +26,5 @@
             </StackPanel>
         </StackPanel>
     </Grid>
-</Window>
+
+</Page>

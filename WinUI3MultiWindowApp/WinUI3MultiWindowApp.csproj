@@ -14,6 +14,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="SubWindow.xaml" />
+    <None Remove="SubWindowTwo.xaml" />
+    <None Remove="SubWindowTwoPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -55,4 +57,15 @@
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
+  <ItemGroup>
+    <CustomAdditionalCompileInputs Remove="SubWindowTwo.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Remove="SubWindowTwo.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="SubWindowTwoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 </Project>

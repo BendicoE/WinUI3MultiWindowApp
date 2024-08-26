@@ -15,7 +15,14 @@ namespace WinUI3MultiWindowApp
         public int[] BigArray
         {
             get => _bigArray;
-            set => SetProperty(ref _bigArray, value);
+            set
+            {
+                if (value != _bigArray)
+                {
+                    SetProperty(ref _bigArray, value);
+                    OnPropertyChanged(nameof(ArraySize));
+                }
+            }
         }
 
         public int ArraySize
@@ -28,6 +35,14 @@ namespace WinUI3MultiWindowApp
             _bigArray = new int[10000000];
             for (int i = 0; i < _bigArray.Length; i++)
                 _bigArray[i] = i;
+        }
+
+        public void IncreaseArrayLength()
+        {
+            var newArray = new int[20000000];
+            for (int i = 0; i < newArray.Length; i++)
+                newArray[i] = i;
+            BigArray = newArray;
         }
     }
 }
