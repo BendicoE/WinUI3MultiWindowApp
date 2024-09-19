@@ -13,6 +13,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="MainView.xaml" />
     <None Remove="SubWindow.xaml" />
     <None Remove="SubWindowThree.xaml" />
     <None Remove="SubWindowThreeView.xaml" />
@@ -64,6 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Remove="SubWindowTwo.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="SubWindowThreeView.xaml">

@@ -1,4 +1,5 @@
 using Microsoft.UI.Xaml;
+using System;
 
 namespace WinUI3MultiWindowApp
 {
@@ -7,11 +8,17 @@ namespace WinUI3MultiWindowApp
         public SubWindowThree()
         {
             this.InitializeComponent();
+            Closed += SubWindowThree_Closed;
+        }
+
+        private void SubWindowThree_Closed(object sender, WindowEventArgs args)
+        {
+            Closed -= SubWindowThree_Closed;
         }
 
         public void SetWindowNo(int i)
         {
-            theView.Model.No = i;
+            theView.SetModelNo(i);
         }
     }
 }

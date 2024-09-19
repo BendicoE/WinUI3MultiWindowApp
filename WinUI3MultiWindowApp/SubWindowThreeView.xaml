@@ -6,19 +6,35 @@
     xmlns:local="using:WinUI3MultiWindowApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
-
+    mc:Ignorable="d"
+    Unloaded="UserControl_Unloaded">
+    <UserControl.Resources>
+        <XamlUICommand x:Name="ButtonCommand"
+                       ExecuteRequested="ButtonCommand_ExecuteRequested"
+                       CanExecuteRequested="ButtonCommand_CanExecuteRequested"
+                       Label="Button Command"
+                       Description="Click the button">
+            <XamlUICommand.IconSource>
+                <FontIconSource FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE8C8;" />
+            </XamlUICommand.IconSource>
+        </XamlUICommand>
+    </UserControl.Resources>
     <Grid x:Name="Container">
         <StackPanel Orientation="Vertical">
+            <CommandBar>
+                <AppBarElementContainer>
+                    <TextBox Text="{x:Bind Globals.Name, Mode=TwoWay}" />
+                </AppBarElementContainer>
+                <AppBarButton Content="{x:Bind Model.ButtonName, Mode=OneWay}" Command="{StaticResource ButtonCommand}" />
+            </CommandBar>
+            <TextBlock Text="{x:Bind Globals.Name, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="SubWindowThree No" FontSize="50" Margin="8" />
                 <TextBlock Text="{x:Bind Model.No, Mode=OneWay}" FontSize="50" Margin="8"/>
-                <!--<TextBlock Text="{Binding Model.No}" FontSize="50" Margin="8"/>-->
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="Array size: " FontSize="20" Margin="12" />
                 <TextBlock Text="{x:Bind Model.ArraySize, Mode=OneWay}" FontSize="20" Margin="12"/>
-                <!--<TextBlock Text="{Binding Model.ArraySize}" FontSize="20" Margin="12" />-->
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button x:Name="myButton" Click="myButton_Click">Increase Array Length</Button>

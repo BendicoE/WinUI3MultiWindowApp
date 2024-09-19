@@ -7,10 +7,5 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click" Margin="8">Create 10 SubWindow's</Button>
-        <Button x:Name="myButton2" Click="myButton2_Click" Margin="8">Create 10 SubWindowTwo's</Button>
-        <Button x:Name="myButton3" Click="myButton3_Click" Margin="8">Create 10 SubWindowThree's</Button>
-    </StackPanel>
+    <local:MainView />
 </Window>

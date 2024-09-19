@@ -8,7 +8,19 @@ namespace WinUI3MultiWindowApp
         public int No
         { 
             get => _no;
-            set => SetProperty(ref _no, value);
+            set
+            {
+                if (_no != value)
+                { 
+                    SetProperty(ref _no, value); 
+                    OnPropertyChanged(nameof(ButtonName));
+                }
+            }
+        }
+
+        public string ButtonName
+        {
+            get => $"Button No {No}";
         }
 
         private int[] _bigArray = null;

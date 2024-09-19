@@ -8,8 +8,10 @@ using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Shapes;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -24,8 +26,16 @@ namespace WinUI3MultiWindowApp
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    public partial class App : Application
+    public partial class App : Application, INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -34,6 +44,22 @@ namespace WinUI3MultiWindowApp
         {
             this.InitializeComponent();
         }
+
+        private GlobalModel _globals = new();
+
+        public GlobalModel Globals
+        {
+            get => _globals;
+            set
+            {
+                if (value != _globals)
+                {
+                    _globals = value;
+                    OnPropertyChanged(nameof(Globals));
+                }
+            }
+        }
+
 
         /// <summary>
         /// Invoked when the application is launched.

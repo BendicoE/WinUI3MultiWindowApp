@@ -1,7 +1,8 @@
 {
   "profiles": {
     "WinUI3MultiWindowApp (Package)": {
-      "commandName": "MsixPackage"
+      "commandName": "MsixPackage",
+      "nativeDebugging": true
     },
     "WinUI3MultiWindowApp (Unpackaged)": {
       "commandName": "Project"
