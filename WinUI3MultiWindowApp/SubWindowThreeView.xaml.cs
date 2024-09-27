@@ -72,7 +72,12 @@ namespace WinUI3MultiWindowApp
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
             Model = null;
-            GC.Collect();
+            myButton.Click -= myButton_Click;
+           UnloadObject(myButton);
+            
+
+
+          // GC.Collect();
         }
     }
 }
