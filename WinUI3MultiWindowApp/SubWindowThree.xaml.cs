@@ -9,11 +9,13 @@ namespace WinUI3MultiWindowApp
         {
             this.InitializeComponent();
             Closed += SubWindowThree_Closed;
+            
         }
 
         private void SubWindowThree_Closed(object sender, WindowEventArgs args)
         {
             Closed -= SubWindowThree_Closed;
+            UnloadObject(theView);
         }
 
         public void SetWindowNo(int i)
