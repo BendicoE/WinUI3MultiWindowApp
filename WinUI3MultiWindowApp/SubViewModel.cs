@@ -18,6 +18,13 @@ namespace WinUI3MultiWindowApp
             }
         }
 
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set => SetProperty(ref _name, value);
+        }
+
         public string ButtonName
         {
             get => $"Button No {No}";

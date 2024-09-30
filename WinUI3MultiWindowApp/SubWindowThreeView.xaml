@@ -26,8 +26,9 @@
                     <TextBox Text="{x:Bind Globals.Name, Mode=TwoWay}" />
                 </AppBarElementContainer>
                 <AppBarButton Content="{x:Bind Model.ButtonName, Mode=OneWay}" Command="{StaticResource ButtonCommand}" />
+                <!--<AppBarButton Content="{x:Bind Model.Name, Mode=OneWay}" />-->
             </CommandBar>
-            <TextBlock Text="{x:Bind Globals.Name, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
+            <!--<TextBlock Text="{x:Bind Globals.Name, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <TextBlock Text="SubWindowThree No" FontSize="50" Margin="8" />
                 <TextBlock Text="{x:Bind Model.No, Mode=OneWay}" FontSize="50" Margin="8"/>
@@ -36,9 +37,9 @@
                 <TextBlock Text="Array size: " FontSize="20" Margin="12" />
                 <TextBlock Text="{x:Bind Model.ArraySize, Mode=OneWay}" FontSize="20" Margin="12"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Button x:Name="myButton" Click="myButton_Click">Increase Array Length</Button>
-            </StackPanel>
+            </StackPanel>-->
         </StackPanel>
     </Grid>
     

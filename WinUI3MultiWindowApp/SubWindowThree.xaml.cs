@@ -15,7 +15,6 @@ namespace WinUI3MultiWindowApp
         private void SubWindowThree_Closed(object sender, WindowEventArgs args)
         {
             Closed -= SubWindowThree_Closed;
-            UnloadObject(theView);
         }
 
         public void SetWindowNo(int i)

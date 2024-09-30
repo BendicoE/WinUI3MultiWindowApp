@@ -9,7 +9,7 @@ namespace WinUI3MultiWindowApp
 {
     public class GlobalModel : ObservableObject
     {
-        private string _name;
+        private string _name = "WinUI3MultiWindowApp";
         public string Name
         {
             get => _name;
